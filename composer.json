@@ -1,0 +1,54 @@
+{
+    "name": "agrp/belajar-package",
+    "description": "Tutorial membuat package sendiri",
+    "keywords": [
+        "agrp",
+        "belajar-package"
+    ],
+    "homepage": "https://github.com/agrp/belajar-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Gundala",
+            "email": "tugaskampusyarsi@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Agrp\\BelajarPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Agrp\\BelajarPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Agrp\\BelajarPackage\\BelajarPackageServiceProvider"
+            ],
+            "aliases": {
+                "BelajarPackage": "Agrp\\BelajarPackage\\BelajarPackageFacade"
+            }
+        }
+    }
+}
